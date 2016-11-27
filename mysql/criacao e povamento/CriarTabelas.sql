@@ -16,32 +16,64 @@ CREATE SCHEMA IF NOT EXISTS `BI` DEFAULT CHARACTER SET utf8 ;
 USE `BI` ;
 
 -- -----------------------------------------------------
+-- Table `BI`.`Pais`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BI`.`Pais` (
+  `idPais` INT NOT NULL AUTO_INCREMENT ,
+  `nomePais` VARCHAR(45) NOT NULL UNIQUE,
+  `last_Updade` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`idPais`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `BI`.`Cidade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BI`.`Cidade` (
+  `idCidade` INT NOT NULL AUTO_INCREMENT,
+  `cidade` VARCHAR(45) NOT NULL UNIQUE,
+  `idPais` INT NOT NULL,
+  `last_Updade` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`idCidade`),
+  INDEX `fk_Cidade_Pais1_idx` (`idPais` ASC),
+  CONSTRAINT `fk_Cidade_Pais1`
+    FOREIGN KEY (`idPais`)
+    REFERENCES `BI`.`Pais` (`idPais`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `BI`.`Cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  `cidade` VARCHAR(45) NOT NULL,
-  `pais` VARCHAR(45) NOT NULL,
   `dataRegisto` DATE NOT NULL,
   `dataNascimento` DATE NOT NULL,
-  `email` VARCHAR(45) NOT NULL ,
-  `nrTelemovel` INT NULL,
+  `email` VARCHAR(45) NOT NULL unique,
+  `nrTelemovel` INT NULL unique,
   `last_Update` TIMESTAMP NOT NULL,
-  unique(email),
-  unique(nrTelemovel),
-  PRIMARY KEY (`idCliente`))
+  `idCidade` INT NOT NULL,
+   PRIMARY KEY (`idCliente`),
+  INDEX `fk_Cliente_Cidade1_idx` (`idCidade` ASC),
+  CONSTRAINT `fk_Cliente_Cidade1`
+    FOREIGN KEY (`idCidade`)
+    REFERENCES `BI`.`Cidade` (`idCidade`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
+
 -- -----------------------------------------------------
--- Table `BI`.`Editora`
+-- Table `BI`.`Produtor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `BI`.`Editora` (
-  `idEditora` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `BI`.`Produtor` (
+  `idProdutor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL unique,
   `last_Update` TIMESTAMP NOT NULL,
-  PRIMARY KEY (`idEditora`))
+  PRIMARY KEY (`idProdutor`))
 ENGINE = InnoDB;
 
 
@@ -51,19 +83,20 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `BI`.`Jogo` (
   `idJogo` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL unique,
-  `dataLancamento` VARCHAR(45) NOT NULL,
+  `dataLancamento` date NOT NULL,
   `idadeParaJogar` INT Unsigned NOT NULL ,
   `quantidade` INT Unsigned NOT NULL ,
   `precoBase` DECIMAL(10,5) Unsigned NOT NULL ,
-  `idEditora` INT NOT NULL,
+  `idProdutor` INT NOT NULL,
   `last_Update` TIMESTAMP NOT NULL,
-  PRIMARY KEY (`idJogo`, `idEditora`),
-  INDEX `fk_Jogo_Editora_idx` (`idEditora` ASC),
-  CONSTRAINT `fk_Jogo_Editora`
-    FOREIGN KEY (`idEditora`)
-    REFERENCES `BI`.`Editora` (`idEditora`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+  `desconto` DECIMAL(10,5) Unsigned NOT NULL,
+  PRIMARY KEY (`idJogo`),
+  INDEX `fk_Jogo_Produtor1_idx` (`idProdutor` ASC),
+  CONSTRAINT `fk_Jogo_Produtor1`
+    FOREIGN KEY (`idProdutor`)
+    REFERENCES `BI`.`Produtor` (`idProdutor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -138,6 +171,7 @@ CREATE TABLE IF NOT EXISTS `BI`.`Avaliacao` (
   `idCliente` INT NULL,
   `avaliacao` INT Unsigned NOT NULL,
   `last_Update` TIMESTAMP NOT NULL,
+  `descricao` TEXT NULL,
   INDEX `fk_Cliente_has_Jogo_Jogo1_idx` (`idJogo` ASC),
   INDEX `fk_Cliente_has_Jogo_Cliente1_idx` (`idCliente` ASC),
   PRIMARY KEY (`idAvaliacao`),
@@ -152,6 +186,8 @@ CREATE TABLE IF NOT EXISTS `BI`.`Avaliacao` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
