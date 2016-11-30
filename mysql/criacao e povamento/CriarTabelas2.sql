@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- Table `BI`.`Cidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Cidade` (
-  `idCidade` INT NOT NULL AUTO_INCREMENT,
+ `idCidade` INT NOT NULL AUTO_INCREMENT,
   `cidade` VARCHAR(45) NOT NULL UNIQUE,
   `idPais` INT NOT NULL,
   `last_Updade` TIMESTAMP NOT NULL,
@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `BI`.`Cidade` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `BI`.`Cliente`
@@ -55,7 +56,8 @@ CREATE TABLE IF NOT EXISTS `BI`.`Cliente` (
   `nrTelemovel` INT NULL unique,
   `last_Update` TIMESTAMP NOT NULL,
   `idCidade` INT NOT NULL,
-   PRIMARY KEY (`idCliente`),
+  `sexo` VARCHAR(1) NOT NULL,
+  PRIMARY KEY (`idCliente`),
   INDEX `fk_Cliente_Cidade1_idx` (`idCidade` ASC),
   CONSTRAINT `fk_Cliente_Cidade1`
     FOREIGN KEY (`idCidade`)
@@ -65,12 +67,11 @@ CREATE TABLE IF NOT EXISTS `BI`.`Cliente` (
 ENGINE = InnoDB;
 
 
-
 -- -----------------------------------------------------
 -- Table `BI`.`Produtor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Produtor` (
-  `idProdutor` INT NOT NULL AUTO_INCREMENT,
+   `idProdutor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL unique,
   `last_Update` TIMESTAMP NOT NULL,
   PRIMARY KEY (`idProdutor`))
@@ -104,7 +105,7 @@ ENGINE = InnoDB;
 -- Table `BI`.`Categoria`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Categoria` (
-  `idCategoria` INT NOT NULL AUTO_INCREMENT,
+   `idCategoria` INT NOT NULL AUTO_INCREMENT,
   `categoria` VARCHAR(45) NOT NULL unique,
   `last_Update` TIMESTAMP NOT NULL,
   PRIMARY KEY (`idCategoria`))
@@ -139,8 +140,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Compras` (
   `idCompras` INT NOT NULL AUTO_INCREMENT,
-  `idJogo` INT NULL,
-  `idCliente` INT NULL,
+  `idJogo` INT NOT NULL,
+  `idCliente` INT NOT NULL,
   `dataCompra` DATE NOT NULL,
   `precoVendido` DECIMAL(10,5) Unsigned NOT NULL,
   `quantidade` INT Unsigned NOT NULL,
@@ -166,15 +167,14 @@ ENGINE = InnoDB;
 -- Table `BI`.`Avaliacao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BI`.`Avaliacao` (
-  `idAvaliacao` INT NOT NULL AUTO_INCREMENT,
-  `idJogo` INT NULL,
-  `idCliente` INT NULL,
-  `avaliacao` INT Unsigned NOT NULL,
+  `idJogo` INT NOT NULL,
+  `idCliente` INT NOT NULL,
+   `avaliacao` INT Unsigned NOT NULL,
   `last_Update` TIMESTAMP NOT NULL,
   `descricao` TEXT NULL,
   INDEX `fk_Cliente_has_Jogo_Jogo1_idx` (`idJogo` ASC),
   INDEX `fk_Cliente_has_Jogo_Cliente1_idx` (`idCliente` ASC),
-  PRIMARY KEY (`idAvaliacao`),
+  PRIMARY KEY (`idJogo`, `idCliente`),
   CONSTRAINT `fk_Cliente_has_Jogo_Cliente1`
     FOREIGN KEY (`idCliente`)
     REFERENCES `BI`.`Cliente` (`idCliente`)
@@ -186,8 +186,6 @@ CREATE TABLE IF NOT EXISTS `BI`.`Avaliacao` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

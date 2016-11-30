@@ -40,17 +40,19 @@ INSERT INTO `bi`.`cliente`
 `email`,
 `nrTelemovel`,
 `last_Update`,
-`idCidade`)
+`idCidade`,
+`sexo`
+)
 VALUES
-(idCliente,'Gil Goncalves','2011-04-2','1992-09-1','gidl@mail.com',123456709,now(),4),
-(idCliente,'Jose Pedro','2012-01-2','1993-03-12','jose@mail.com',234567890,now(),9),
-(idCliente,'Bruno Ribeiro','2012-05-2','1991-01-14','bruno@mail.com',345678901,now(),1),
-(idCliente,'Luis Pedro','2009-04-15','1990-04-15','luis@mail.com',456789012,now(),1),
-(idCliente,'Celia Figueiredo','2012-01-2','1993-12-24','celia@mail.com',567890123,now(),2),
-(idCliente,'Marcia Costa','2011-12-2','1992-02-12','marcia@mail.com',NULL,now(),3),
-(idCliente,'Daniel Rodrigues','2010-04-2','1990-09-1','daniel@mail.com',678901234,now(),4),
-(idCliente,'Ricardo Lopes','2009-04-2','1990-09-1','ricardo@mail.com',NULL,now(),5),
-(idCliente,'Carlos Faria','2012-11-2','1993-12-1','carlos@mail.com',NULL,now(),6);
+(idCliente,'Gil Goncalves','2011-04-2','1992-09-1','gidl@mail.com',123456709,now(),4,'M'),
+(idCliente,'Jose Pedro','2012-01-2','1993-03-12','jose@mail.com',234567890,now(),9,'M'),
+(idCliente,'Bruno Ribeiro','2012-05-2','1991-01-14','bruno@mail.com',345678901,now(),1,'M'),
+(idCliente,'Luis Pedro','2009-04-15','1990-04-15','luis@mail.com',456789012,now(),1,'M'),
+(idCliente,'Celia Figueiredo','2012-01-2','1993-12-24','celia@mail.com',567890123,now(),2,'F'),
+(idCliente,'Marcia Costa','2011-12-2','1992-02-12','marcia@mail.com',NULL,now(),3,'F'),
+(idCliente,'Daniel Rodrigues','2010-04-2','1990-09-1','daniel@mail.com',678901234,now(),4,'M'),
+(idCliente,'Ricardo Lopes','2009-04-2','1990-09-1','ricardo@mail.com',NULL,now(),5,'M'),
+(idCliente,'Carlos Faria','2012-11-2','1993-12-1','carlos@mail.com',NULL,now(),6,'M');
 
 INSERT INTO `bi`.`produtor`
 (`idProdutor`,
@@ -99,14 +101,14 @@ INSERT INTO `bi`.`jogo`
 VALUES
 (idJogo,'GTA','2014-02-12',18,100,60,4,now(),0.5),
 (idJogo,'Max Payne ','2014-01-12',18,100,65,10,now(),0),
-(idJogo,'Hitman,','2013-02-12',18,100,50,1,now(),0.8),
+(idJogo,'Hitman','2013-02-12',18,100,50,1,now(),0.8),
 (idJogo,'Gears of War','2014-02-12',18,10,30,10,now(),0.1),
 (idJogo,'Monkey Island','2010-02-12',12,50,20,2,now(),0.2),
 (idJogo,'Tomb Raider','2015-02-12',18,30,30,3,now(),0.6),
-(idJogo,'NASCAR,','2014-02-12',18,100,15.3,4,now(),0.54),
+(idJogo,'NASCAR','2014-02-12',18,100,15.3,4,now(),0.54),
 (idJogo,'GTR','2015-10-12',18,10,13,5,now(),0),
 (idJogo,'Need For Speed','2013-12-12',18,60,30,6,now(),0.28),
-(idJogo,'Alone in The Dark,','2014-02-12',18,100,30,7,now(),0.39);
+(idJogo,'Alone in The Dark','2014-02-12',18,100,30,7,now(),0.39);
 
 
 
@@ -160,20 +162,18 @@ VALUES
 
 
 INSERT INTO `bi`.`avaliacao`
-(`idAvaliacao`,
-`idJogo`,
+(`idJogo`,
 `idCliente`,
 `avaliacao`,
 `last_Update`,
 `descricao`)
 VALUES
-(idAvaliacao,1,1,3,now(),'Gostei muito'),
-(idAvaliacao,2,1,5,now(),'Melhor jogo de sempre'),
-(idAvaliacao,3,2,0,now(),'Adorei'),
-(idAvaliacao,8,8,5,now(),NULL),
-(idAvaliacao,9,9,3,now(),NULL),
-(idAvaliacao,10,8,1,now(),NULL),
-(idAvaliacao,4,3,5,now(),NULL),
-(idAvaliacao,1,4,3,now(),NULL),
-(idAvaliacao,1,4,10,now(),'Recomendo');
+(1,1,3,now(),'Gostei muito'),
+(2,1,5,now(),'Melhor jogo de sempre'),
+(3,2,0,now(),'Adorei'),
+(8,8,5,now(),NULL),
+(9,9,3,now(),NULL),
+(10,8,1,now(),NULL),
+(4,3,5,now(),NULL),
+(1,4,1,now(),'Recomendo');
 
