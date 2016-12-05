@@ -33,19 +33,25 @@ start transaction;
 	from pais
     where pais.nomePais = nomePais;
 	 
-      if contaPais >= 1
+      if contaPais != NULL
        
        then 
 		
 			insert into cidade values (idCidade,nomeC,contaPais,now());
             
-            insert into cliente values (idCliente,nomeCliente,dataRegisto,dataNascimento,email,numeroTel,now(),contaCidade,sexo);
+		    select idCidade into idC
+			from cidade
+			order by idCidade DESC
+			LIMIT 1;
+            
+            
+            insert into cliente values (idCliente,nomeCliente,dataRegisto,dataNascimento,email,numeroTel,now(),idC,sexo);
 
   
    
        else     
-           
-            insert into pais values (idPais,nomeP,now());
+          
+            insert into pais values (idPais,nomePais,now());
             
             
             select idPais into idP
@@ -53,7 +59,7 @@ start transaction;
 			order by idPais DESC
 			LIMIT 1;
             
-            insert into cidade values (idCidade,nomeC,idP,now());
+             insert into cidade values (idCidade,nomeC,idP,now());
             
             
             
@@ -61,9 +67,10 @@ start transaction;
 			from cidade
 			order by idCidade DESC
 			LIMIT 1;
-            
+          
             
             insert into cliente values (idCliente,nomeCliente,dataRegisto,dataNascimento,email,numeroTel,now(),idC,sexo);
+           
             
     end if;
   
@@ -79,8 +86,9 @@ END $$
 
 
 
-call inserCliente('Gil Goncalves','2011-04-2','1992-09-1','gidlsdfddfgggd@mail.com',1234561093,'Ssd','dfdvsa','M');
+call inserCliente('Gil Goncalves','2011-04-2','1992-09-1','gfo@mafil.com',133,'Lfg','Portugalffd','M');
 
-delimiter $$
+DELIMITER $$
+
 select *
 from pais;
