@@ -34,6 +34,15 @@ end $$
 
 DELIMITER $$
 
+Predicate: jogo.idJogo=idJogo;
+join attribute : none;
+ordering attribute : none;
+GROUPING attribute : none;
+Built-in function : none;
+Atributes update : jogo.quantidade = jogo.quantidade - quantidade;
+
+
+
 call inserirCompra (1,1,'2014-05-10',300,1000,0.5);
 DELIMITER $$
 
