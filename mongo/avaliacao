@@ -1,0 +1,36 @@
+{
+	_id : {idJogador : 1, idJogo : 1},
+	avaliacao :2
+
+}
+
+
+{
+	_id : {idJogador : 1, idJogo : 2},
+	avaliacao :3
+
+}
+
+{
+	_id : {idJogador : 7, idJogo : 2},
+	avaliacao :5
+
+}
+
+{
+	_id : {idJogador : 6, idJogo : 1},
+	avaliacao :3
+
+}
+
+{
+	_id : {idJogador : 2, idJogo : 3},
+	avaliacao :4
+
+}
+
+{
+	_id : {idJogador : 2, idJogo : 2},
+	avaliacao :3
+
+}

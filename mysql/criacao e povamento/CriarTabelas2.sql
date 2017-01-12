@@ -187,6 +187,145 @@ CREATE TABLE IF NOT EXISTS `BI`.`Avaliacao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `bi`.`paisAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`paisAuditoria` (
+  `idPaisAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idPais` INT NULL,
+  `nomePais` VARCHAR(45) NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  PRIMARY KEY (`idPaisAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`cidadeAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`cidadeAuditoria` (
+  `idCidadeAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idCidade` INT NULL,
+  `nomeCidade` VARCHAR(45) NULL,
+  `idPais` INT NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  PRIMARY KEY (`idCidadeAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`clienteAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`clienteAuditoria` (
+  `idclienteAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idCliente` INT NULL,
+  `nomeCliente` VARCHAR(45) NULL,
+  `dataRegisto` DATE NULL,
+  `dataNascimento` DATE NULL,
+  `email` VARCHAR(45) NULL,
+  `nrTelemovel` INT NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `idCidade` INT NULL,
+  `sexo` VARCHAR(1) NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idclienteAuditoria`))
+ENGINE = InnoDB;
+
+
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`avaliacaoAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`avaliacaoAuditoria` (
+  `idavaliacaoAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idJogo` INT NULL,
+  `idCliente` INT NULL,
+  `avaliacao` INT NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `descricao` TEXT NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idavaliacaoAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`comprasAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`comprasAuditoria` (
+  `idcomprasAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idCompra` INT NULL,
+  `idJogo` INT NULL,
+  `idCliente` INT NULL,
+  `dataCompra` DATE NULL,
+  `precoVendido` DECIMAL(10,5) NULL,
+  `quantidade` INT NULL,
+  `desconto` DECIMAL(10,5) NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idcomprasAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`jogoAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`jogoAuditoria` (
+  `idjogoAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idJogo` INT NULL,
+  `nome` VARCHAR(45) NULL,
+  `dataLancamento` DATE NULL,
+  `idadeParaJogar` INT NULL,
+  `quantidade` INT NULL,
+  `precoBase` DECIMAL(10,5) NULL,
+  `idProdutor` INT NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `desconto` DECIMAL(10,5) NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idjogoAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`produtorAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`produtorAuditoria` (
+  `idprodutorAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idProdutor` INT NULL,
+  `nome` VARCHAR(45) NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idprodutorAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`jogoCategoriaAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`jogoCategoriaAuditoria` (
+  `idjogoCategoriaAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idJogo` INT NULL,
+  `idCategoria` INT NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idjogoCategoriaAuditoria`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `bi`.`categoriaAuditoria`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `bi`.`categoriaAuditoria` (
+  `idcategoriaAuditoria` INT NOT NULL AUTO_INCREMENT,
+  `idCategoria` INT NULL,
+  `categoria` VARCHAR(45) NULL,
+  `dataOperacao` TIMESTAMP NULL,
+  `tipoOperacao` VARCHAR(1) NULL,
+  PRIMARY KEY (`idcategoriaAuditoria`))
+ENGINE = InnoDB;
+
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

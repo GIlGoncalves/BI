@@ -26,7 +26,7 @@ VALUES
 (idCidade,'Paris',2,now()),
 (idCidade,'Barcelona',4,now()),
 (idCidade,'Madrid',4,now()),
-(idCidade,'Reino Unido',3,now()),
+(idCidade,'Londres',3,now()),
 (idCidade,'Lousada',1,now());
 
 
@@ -44,7 +44,7 @@ INSERT INTO `bi`.`cliente`
 `sexo`
 )
 VALUES
-(idCliente,'Gil Goncalves','2011-04-2','1992-09-1','gidl@mail.com',123456709,now(),4,'M'),
+(idCliente,'Gil Goncalves','2011-04-2','1992-09-1','gil@mail.com',123456709,now(),4,'M'),
 (idCliente,'Jose Pedro','2012-01-2','1993-03-12','jose@mail.com',234567890,now(),9,'M'),
 (idCliente,'Bruno Ribeiro','2012-05-2','1991-01-14','bruno@mail.com',345678901,now(),1,'M'),
 (idCliente,'Luis Pedro','2009-04-15','1990-04-15','luis@mail.com',456789012,now(),1,'M'),
