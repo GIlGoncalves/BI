@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `DW`.`dim_Cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nomeCliente` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `numeroTelemovel` VARCHAR(45) NOT NULL,
+  `numeroTelemovel` INT NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   `pais` VARCHAR(45) NOT NULL,
   `dataNascimento` DATE NOT NULL,
