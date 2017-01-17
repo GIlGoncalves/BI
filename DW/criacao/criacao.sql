@@ -33,23 +33,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DW`.`dim_produto`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DW`.`dim_produto` (
-  `idproduto` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
-  `precoBase` DECIMAL(10,5) NOT NULL,
-  `quantidadeDisponivel` INT NOT NULL,
-  `idadeParaJogar` INT NOT NULL,
-  `desconto` DECIMAL(10,5) NOT NULL,
-  `produtor` VARCHAR(45) NOT NULL,
-  `dataLancamento` DATE NOT NULL,
-  `last_update` TIMESTAMP NOT NULL,
-  PRIMARY KEY (`idproduto`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `DW`.`dim_Data`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DW`.`dim_Data` (
@@ -66,6 +49,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `DW`.`dim_Jogo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DW`.`dim_Jogo` (
+  `idJogo` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `precoBase` DECIMAL(10,5) NOT NULL,
+  `quantidadeDisponivel` INT NOT NULL,
+  `idadeParaJogar` INT NOT NULL,
+  `desconto` DECIMAL(10,5) NOT NULL,
+  `produtor` VARCHAR(45) NOT NULL,
+  `dataLancamento` DATE NOT NULL,
+  `last_update` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`idJogo`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `DW`.`ft_VendasJogos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DW`.`ft_VendasJogos` (
@@ -76,26 +76,26 @@ CREATE TABLE IF NOT EXISTS `DW`.`ft_VendasJogos` (
   `descontoVenda` DECIMAL(10,5) NOT NULL,
   `idadeCliente` INT NOT NULL,
   `idCliente` INT NOT NULL,
-  `idproduto` INT NOT NULL,
   `idData` INT NOT NULL,
+  `idJogo` INT NOT NULL,
   `last_update` TIMESTAMP NOT NULL,
   PRIMARY KEY (`idVendasJogos`),
   INDEX `fk_ft_VendasJogos_dim_Cliente_idx` (`idCliente` ASC),
-  INDEX `fk_ft_VendasJogos_dim_produto1_idx` (`idproduto` ASC),
   INDEX `fk_ft_VendasJogos_dim_Data1_idx` (`idData` ASC),
+  INDEX `fk_ft_VendasJogos_dim_jogo1_idx` (`idJogo` ASC),
   CONSTRAINT `fk_ft_VendasJogos_dim_Cliente`
     FOREIGN KEY (`idCliente`)
     REFERENCES `DW`.`dim_Cliente` (`idCliente`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ft_VendasJogos_dim_produto1`
-    FOREIGN KEY (`idproduto`)
-    REFERENCES `DW`.`dim_produto` (`idproduto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_ft_VendasJogos_dim_Data1`
     FOREIGN KEY (`idData`)
     REFERENCES `DW`.`dim_Data` (`idData`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ft_VendasJogos_dim_jogo1`
+    FOREIGN KEY (`idJogo`)
+    REFERENCES `DW`.`dim_Jogo` (`idJogo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -119,17 +119,17 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DW`.`produto_historia`
+-- Table `DW`.`jogo_Historia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DW`.`produto_historia` (
-  `idproduto` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `DW`.`jogo_Historia` (
   `precoBase` DECIMAL(10,5) NOT NULL,
   `desconto` DECIMAL(10,5) NOT NULL,
+  `idJogo` INT NOT NULL,
   `last_update` TIMESTAMP NOT NULL,
-  INDEX `fk_historia_Produto_dim_produto1_idx` (`idproduto` ASC),
-  CONSTRAINT `fk_historia_Produto_dim_produto1`
-    FOREIGN KEY (`idproduto`)
-    REFERENCES `DW`.`dim_produto` (`idproduto`)
+  INDEX `fk_jogo_Historia_dim_jogo1_idx` (`idJogo` ASC),
+  CONSTRAINT `fk_jogo_Historia_dim_jogo1`
+    FOREIGN KEY (`idJogo`)
+    REFERENCES `DW`.`dim_Jogo` (`idJogo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
