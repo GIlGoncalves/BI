@@ -1,0 +1,65 @@
+{	
+	_id : 1,
+	id_cliente : 1,
+	id_jogo : 1,
+	quantidade : 1,
+	preco : 30,
+	desconto : 0.5,
+	data_compra : "2014-05-10",
+	last_update : "2017-01-18"
+}
+
+{
+	_id : 2,
+	id_cliente : 1,
+	id_jogo : 2,
+	quantidade : 3,
+	preco : 39,
+	desconto : 0.4,
+	data_compra : "2014-06-10",
+	last_update : "2017-01-18"
+}
+
+{
+	_id : 3,
+	id_cliente : 2,
+	id_jogo : 2,
+	quantidade : 2,
+	preco : 52,
+	desconto : 0.2,
+	data_compra : "2014-01-12",
+	last_update : "2017-01-18"
+}
+
+{
+	_id : 4,
+	id_cliente : 2,
+	id_jogo : 3,
+	quantidade : 1,
+	preco :25,
+	desconto : 0.5,
+	data_compra : "2013-05-12",
+	last_update : "2017-01-18"
+}
+
+{
+	_id : 5,
+	id_cliente : 6,
+	id_jogo : 1,
+	quantidade : 1,
+	preco : 30,
+	desconto : 0.5,
+	data_compra : "2014-05-10",
+	last_update : "2017-01-18"
+}
+
+{
+	_id : 6,
+	id_cliente : 7,
+	id_jogo : 2,
+	quantidade : 1,
+	preco : 65,
+	desconto : 0,
+	data_compra : "2014-01-12",
+	last_update : "2017-01-18"
+}

@@ -1,0 +1,42 @@
+{
+	_id : {idJogador : 1, idJogo : 1},
+	avaliacao :2,
+	last_update : "2017-01-02"
+
+}
+
+
+{
+	_id : {idJogador : 1, idJogo : 2},
+	avaliacao :3,
+	last_update : "2017-01-18"
+
+}
+
+{
+	_id : {idJogador : 7, idJogo : 2},
+	avaliacao :5,
+	last_update : "2017-01-18"
+
+}
+
+{
+	_id : {idJogador : 6, idJogo : 1},
+	avaliacao :3,
+	last_update : "2017-01-19"
+
+}
+
+{
+	_id : {idJogador : 2, idJogo : 3},
+	avaliacao :4,
+	last_update : "2017-01-19"
+
+}
+
+{
+	_id : {idJogador : 2, idJogo : 2},
+	avaliacao :3,
+	last_update : "2017-01-02"
+
+}

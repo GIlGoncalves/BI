@@ -1,2 +1,0 @@
->mongoimport.exe --db bi --collection utilizador --drop --file C:\Users\gil\Documents\cadeiras\BI\mongo\utilizadores
-fazer para cada texto

@@ -1,0 +1,79 @@
+{
+   _id: 1,
+   nome : "Pacman",
+   data_lancamento : "1980-05-22",
+   idade_minima : 5,
+   stock : 100,
+   preco : 5,
+   desconto : 0.5,
+   produtor : "Namco",
+   categoria : ["Labirinto"],
+   last_update : "2017-01-11"
+}
+
+{
+   _id: 2,
+   nome : "Super Mario World",
+   data_lancamento : "1990-11-21",
+   idade_minima : 5,
+   stock : 100,
+   preco : 6,
+   desconto : 0,
+   produtor : "Nintendo EAD",
+   categoria : ["Plataforma","Aventura"],
+   last_update : "2017-01-12"
+}
+
+{
+   _id: 3,
+   nome : "Mario Bros",
+   data_lancamento : "1983-02-12",
+   idade_minima : 18,
+   stock : 100,
+   preco : 5,
+   desconto : 0.1,
+   produtor : "Nintendo",
+   categoria : ["Plataforma","Aventura"],
+   last_update : "2016-11-10"
+}
+
+{
+   _id: 4,
+   nome : "Super Mario Bros",
+   data_lancamento : "1985-03-12",
+   idade_minima : 5,
+   stock : 10,
+   preco : 7,
+   desconto : 0.1,
+   produtor : "Nintendo EAD",
+   categoria : ["Plataforma","Aventura"],
+   last_update : "2016-12-10"
+}
+
+
+{
+   _id: 5,
+   nome : "Sonic",
+   data_lancamento : "1991-06-23",
+   idade_minima : 12,
+   stock : 100,
+   preco : 7,
+   desconto : 0.2,
+   produtor : "Sega",
+   categoria : ["Plataforma", "Aventura"],
+   last_update : "2017-01-15"
+}
+
+
+{
+   _id: 6,
+   nome : "Pokemon",
+   data_lancamento : "1996-02-27",
+   idade_minima : 5,
+   stock : 100,
+   preco : 10,
+   desconto : 0,
+   produtor : "Nintendo",
+   categoria : ["RPG","Aventura", "Estrategia"],
+   last_update : "2017-01-10"
+}

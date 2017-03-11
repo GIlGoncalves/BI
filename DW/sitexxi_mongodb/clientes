@@ -1,0 +1,91 @@
+{
+   _id: 1,
+   nome: "Gil Goncalves",
+   email : "gil@mail.com",
+   data_nascimento: "1992-09-1",
+   sexo : "M",
+   nr_telemovel : "123456709",
+   data_registo : "2011-04-2",
+   cidade : "Fafe",
+   pais   : "Portugal",
+   last_update : "2016-01-02"
+}
+
+{
+   _id: 2,
+   nome: "Jose Pedro",
+   email : "jose@mail.com",
+   data_nascimento: "1993-03-12",
+   sexo : "M",
+   nr_telemovel : "234567890",
+   data_registo : "2012-01-2",
+   cidade : "Lousada",
+   pais   : "Portugal",
+   last_update : "2016-02-02"
+
+}
+
+{
+   _id: 3,
+   nome: "Bruno Ribeiro",
+   email : "bruno@mail.com",
+   data_nascimento: "1991-01-14",
+   sexo : "M",
+   nr_telemovel : "345678901",
+   data_registo : "2012-05-2",
+   cidade : "Braga",
+   pais   : "Portugal",
+   last_update : "2016-03-02"
+}
+
+{
+   _id: 4,
+   nome: "Luis Pedro",
+   email : "luis@mail.com",
+   data_nascimento: "1990-04-15",
+   sexo : "M",
+   nr_telemovel : "123456789",
+   data_registo : "2009-04-15",
+   cidade : "Braga",
+   pais   : "Portugal",
+   last_update : "2017-01-02"
+}
+
+{
+   _id: 5,
+   nome: "Celia Natalia Figueiredo",
+   email : "celia@mail.com",
+   data_nascimento: "1993-12-24",
+   sexo : "F",
+   nr_telemovel : "567890123",
+   data_registo : "2012-01-2",
+   cidade : "Braga",
+   pais   : "Portugal",
+   last_update : "2017-01-02"
+}
+
+{
+   _id: 6,
+   nome: "Alberto Fernandes",
+   email : "alberto@mail.com",
+   data_nascimento: "1994-02-2",
+   sexo : "M",
+   nr_telemovel : "567890120",
+   data_registo : "2012-01-2",
+   cidade : "Fafe",
+   pais   : "Portugal",
+   last_update : "2017-01-12"
+}
+
+{
+   _id: 7,
+   nome: "Carla Afonso",
+   email : "carla@mail.com",
+   data_nascimento: "1994-05-2",
+   sexo : "F",
+   nr_telemovel : "567890130",
+   data_registo : "2013-01-2",
+   cidade : "Londres",
+   pais   : "Inglaterra",
+   last_update : "2017-01-20"
+}

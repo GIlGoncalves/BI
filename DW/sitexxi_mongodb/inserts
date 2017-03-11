@@ -1,0 +1,42 @@
+--> Cliente
+{
+   _id: 8,
+   nome: "Teste2",
+   email : "teste2@mail.com",
+   data_nascimento: "1994-05-2",
+   sexo : "F",
+   nr_telemovel : "567890130",
+   data_registo : "2013-01-2",
+   cidade : "Londres",
+   pais   : "Inglaterra",
+   operation : "I",
+   last_update : "2017-02-20"
+}
+
+--> Jogo
+{
+   _id: 7,
+   nome : "Teste2",
+   data_lancamento : "2014-02-12",
+   idade_minima : 18,
+   stock : 100,
+   preco : 60,
+   desconto : 0.5,
+   produtor : "Ubisoft",
+   categoria : ["Acao","Aventura"],
+   operation : "I",
+   last_update : "2017-02-18"
+}
+
+--> Compra
+{
+   _id : 7,
+   id_cliente : 8,
+   id_jogo : 2,
+   quantidade : 1,
+   preco : 65,
+   desconto : 0,
+   data_compra : "2014-01-12",
+   operation : "I",
+   last_update : "2017-02-27"
+}
