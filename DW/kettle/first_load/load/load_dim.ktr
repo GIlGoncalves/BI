@@ -578,7 +578,7 @@
     </partitioning>
     <connection>sitexxi_dw</connection>
     <schema/>
-    <table>DIM_Cliente</table>
+    <table>dim_cliente</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -662,7 +662,7 @@
     </partitioning>
     <connection>sitexxi_dw</connection>
     <schema/>
-    <table>DIM_Jogo</table>
+    <table>dim_jogo</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>

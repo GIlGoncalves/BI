@@ -153,23 +153,10 @@ BEGIN
     
     select id_DIM_Jogo into id_jogo from AR_SK_Jogo where source = in_source and id_source = in_id_jogo limit 1;
 	
-    select AR_Conformity_Cliente1.data_nascimento into data_nascimento from AR_Conformity_Cliente1 where AR_Conformity_Cliente1.id_cliente = in_id_cliente and AR_Conformity_Cliente1.source = in_source limit 1;
-	
-    if data_nascimento is not null then
-		insert into AR_TF_Venda
-			(id_data,id_cliente,id_jogo,quantidade,preco_unidade,preco_total,desconto,idade_cliente)
-		values
-			(id_data,id_cliente,id_jogo,in_quantidade,in_preco,in_preco*in_quantidade,in_desconto,Floor((DATEDIFF(date(in_data_compra),data_nascimento)/365.25)));
-    else
-		select AR_Conformity_Cliente2.data_nascimento into data_nascimento from AR_Conformity_Cliente2 where AR_Conformity_Cliente2.id_cliente = in_id_cliente and AR_Conformity_Cliente2.source = in_source limit 1;
-    
-		if data_nascimento is not null then
-			insert into AR_TF_Venda
+    insert into AR_TF_Venda
 				(id_data,id_cliente,id_jogo,quantidade,preco_unidade,preco_total,desconto,idade_cliente)
 			values
-				(id_data,id_cliente,id_jogo,in_quantidade,in_preco,in_preco*in_quantidade,in_desconto,Floor((DATEDIFF(date(in_data_compra),data_nascimento)/365.25)));
-		end if;
-	end if;
+				(id_data,id_cliente,id_jogo,in_quantidade,in_preco,in_preco*in_quantidade,in_desconto,23);
 
 END $$
 DELIMITER ;

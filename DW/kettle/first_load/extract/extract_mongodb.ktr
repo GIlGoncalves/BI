@@ -471,7 +471,7 @@
     <hop>
       <from>Jogos</from>
       <to>AR_Extract_Jogo2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Vendas</from>
@@ -721,7 +721,7 @@
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
-    <db_name>sitexxi_mongodb</db_name>
+    <db_name>test</db_name>
     <fields_name/>
     <collection>clientes</collection>
     <json_field_name>json</json_field_name>
@@ -839,7 +839,7 @@
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
-    <db_name>sitexxi_mongodb</db_name>
+    <db_name>test</db_name>
     <fields_name/>
     <collection>jogos</collection>
     <json_field_name>json</json_field_name>
@@ -949,7 +949,7 @@
     <hostname>localhost</hostname>
     <port>27017</port>
     <use_all_replica_members>N</use_all_replica_members>
-    <db_name>sitexxi_mongodb</db_name>
+    <db_name>test</db_name>
     <fields_name/>
     <collection>compras</collection>
     <json_field_name>json</json_field_name>

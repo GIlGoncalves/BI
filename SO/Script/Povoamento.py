@@ -1,10 +1,10 @@
-from faker import Faker
+#from faker import Faker
 import mySQL_DB
 from config import *
 from idGenerator import *
 from random import randint
 
-fake = Faker()
+#fake = Faker()
 
 
 mySqlDB = mySQL_DB.DataBaseMySQL()
@@ -148,7 +148,7 @@ def insertCompras():
         avaliacao = randint(1,9)
         mySqlDB.add_Compra(cliente,jogo,quantidade,preco,desconto,dataCompra)
         # inserir avaliacao
-        mySqlDB.add_Avaliacao(cliente,jogo,avaliacao,fake.text(),dataCompra)
+        mySqlDB.add_Avaliacao(cliente,jogo,avaliacao," ",dataCompra)
         i = i + 1
 
 

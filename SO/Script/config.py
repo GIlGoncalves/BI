@@ -21,14 +21,14 @@ fstBornDate = datetime.strptime('1932-04-30', "%Y-%m-%d").date()
 bornPeriod = lstBornDate - fstBornDate
 
 lstRegDate = datetime.strptime('2017-06-30', "%Y-%m-%d").date()
-fstRegDate = datetime.strptime('2005-04-30', "%Y-%m-%d").date()
+fstRegDate = datetime.strptime('2013-01-04', "%Y-%m-%d").date()
 regPeriod = lstRegDate - fstRegDate
 
 male = ["Joaquim", "Júlio", "Artur", "João", "Miguel", "Leonardo", "José", "Carlos", "Alexandre", "Bernardo", "Daniel", "Eduardo", "Fernando", "Gabriel", "Hugo", "Ivo", "Luís", "Manuel", "Nuno", "Otávio", "Pedro", "Xavier", "Rui"]
 
 female = ["Andreia", "Ana", "Filipa", "Beatriz", "Carolina", "Daniela", "Eduarda", "Fátima", "Gabriela", "Helena", "Ivone", "Joana", "Luísa", "Manuela", "Natália", "Patrícia", "Rita", "Sandra", "Vânia"]
 
-gameNameL = ["Dead","Futebol", "fight","combat","race", "matrix","legendary", "ww2","cs","pie","recruta","stickman","ultimate","sayid","lost", "jiu jitsu"]
+gameNameL = ["Dead","Futebol", "fight","combat","race", "matrix","legendary", "ww2","cs","pie","recruta","stickman","ultimate","sayid","lost", "jiu jitsu","bruxedo","emails"]
 
 gameNameF = ["Power", "magic", "mike", "inferno", "dust", "panqueca", "banana split", "soccer", "sacholas", "Ville", "lucifer","arrow", "spider man", "iBad", "RedFaced", "TUM", " marrown", "kratos" ]
 

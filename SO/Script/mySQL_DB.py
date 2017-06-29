@@ -5,7 +5,7 @@ class DataBaseMySQL():
 
     def __init__(self):
         # Connect to the database
-        self.db = pymysql.connect(host='localhost', user='root', password='1234', database='sitexxi',
+        self.db = pymysql.connect(host='localhost', user='root', password='', database='sitexxi',
                              use_unicode=True, charset="utf8")
 
         # prepare a cursor object using cursor() method

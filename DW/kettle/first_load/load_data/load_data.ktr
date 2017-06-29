@@ -642,7 +642,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;datas.csv</filename>
+    <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;datas.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>

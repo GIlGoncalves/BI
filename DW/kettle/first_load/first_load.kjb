@@ -313,7 +313,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;extract&#x2f;extract.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;extract&#x5c;extract.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -344,7 +344,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;cleanup&#x2f;cleanup.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;cleanup&#x5c;cleanup.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -385,7 +385,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;load_data&#x2f;load_data.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;load_data&#x5c;load_data.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -416,7 +416,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;conformity&#x2f;conformity.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;conformity&#x5c;conformity.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -447,7 +447,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;conciliation&#x2f;conciliation.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;conciliation&#x5c;conciliation.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -478,7 +478,7 @@
       <type>JOB</type>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>&#x2f;Users&#x2f;brunoribeiro&#x2f;Desktop&#x2f;BI&#x2f;DW&#x2f;kettle&#x2f;first_load&#x2f;load&#x2f;load.kjb</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;gil&#x5c;Desktop&#x5c;DW&#x5c;kettle&#x5c;first_load&#x5c;load&#x5c;load.kjb</filename>
       <jobname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -529,8 +529,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>cleanup</from>

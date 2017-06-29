@@ -71,3 +71,41 @@ value (New.id_compra,New.id_cliente,New.id_jogo,New.quantidade,New.preco,New.des
 
 end $$
 DELIMITER ;
+
+drop trigger if exists update_stock; 
+
+Delimiter $$
+create trigger update_stock
+before insert on Compra
+for each row
+begin
+dECLARE msg varchar(255);
+dECLARE quantidadeJogo int;
+dECLARE descontoJogo decimal(5,2);
+
+select stock into quantidadeJogo from jogo where new.id_jogo=id_jogo;
+select desconto into descontoJogo from jogo where new.id_jogo=id_jogo;
+
+
+if(New.quantidade>quantidadeJogo) 
+Then 
+ set msg= 'Não têm stock suficiente';
+          SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg; 
+elseif (New.desconto!=descontoJogo) 
+	then 
+    set msg= 'O desconto é diferente que o permitido';
+          SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg; 
+    
+    else 
+		update jogo
+          set stock = stock-New.quantidade
+          where new.id_jogo=id_jogo;
+    
+    end if;
+
+end $$
+DELIMITER ;
+
+
+
+
